@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: lastica;
+    src: url("_fonts\FontsFree-Net-Lastica.ttf");
+}
+
+body{
+    background-color: blueviolet;
+    background-image: img src=("_imagens/background.png");
+    align-items: center;
+}
+
+figure#logo {
+    width: 20px;
+    height: 20px;
+}
+
+figure#logo img{
+    width: 100%;
+    height: 100%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top -10px;
+    left: 175px;
+}
+
+figure#tres img{
+    width: 100%;
+    height: 100%;
+    width: 65px;
+    height: 49px;
+    top 15px;
+    left: 39px;
+}
+
+nav#menu{
+    display: block;
+}
+
+nav#menu ul {
+    list-style: none;
+    text-transform: uppercase;   
+    position: absolute;
+    top: 30px;
+    left: 300px;
+}
+
+nav#menu li{
+    display: inline-block;
+    padding: 10px;
+    margin: 20px;
+    transition: font-weight 1s;
+}
+
+nav#menu li:hover{
+    font-weight: bold;
+}
+
+nav#menu a{
+    color: white;
+    text-decoration: none;
+    font-family: lastica;
+}
+
+div#parametro ul{
+    list-style: none;
+}
+
+div#parametro li{
+    display: inline-block;
+    padding: 5px;
+}
+
+div#parametro img{
+    width: 100%;
+    height: 100%;
+    width: 170px;
+    height: auto;
+}
+
+div#fornec ul{
+    list-style: none;
+}
+
+div#fornec li{
+    display: inline-block;
+    padding: 5px;
+}
+
+div#fornec img{
+    width: 100%;
+    height: 100%;
+    width: 100px;
+    height: auto;
+    left: 100px;
+}
+
+.search-container {
+    align-content: center;
+    position: relative;
+}
+
+.search-box {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #fff; /* Cor da borda branca */
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0); /* Cor de fundo transparente */
+    outline: none; /* Remove a borda de foco ao clicar */
+    color: #ffffff ; /* Cor do texto */
+}
+
+.search-box::placeholder {
+    color: #ffffff; /* Cor do texto de espaço reservado */
+    font-family: lastica;
+}
+
+.search-button {
+    position: relative;
+    width: 10px;
+    height: auto;
+    background: none;
+    border: none;
+ 
