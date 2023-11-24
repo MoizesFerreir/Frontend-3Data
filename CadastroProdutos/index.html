@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+    <head>
+       
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+        <title>Cadastro</title>
+    </head>
+
+    <body>  
+        <div>
+            <h1 id="titulo">Cadastro de Produtos</h1>
+            <p id="subtitulo">Complete as informações</p>
+            <br>
+        </div>
+        <form>
+            <fieldset class="grupo">
+                <div class="campo">
+                    <label for="nome"><strong>Nome do Produto</strong></label>
+                    <input type="text" name="nome" id="nome" required>
+                </div>
+            </fieldset> 
+            <div class="campo">
+                <label for="email"><strong>Valor R$:</strong></label>
+                <input type="double" name="preço" id="preço" required>
+            </div>
+            <div class="campo">
+                <label><strong>Produto personalizavel?</strong></label>
+                <label>
+                    <input type="radio" name="sim" value="sim">Sim
+                </label>
+                <label>
+                    <input type="radio" name="não" value="Não">Não
+                </label>
+            </div>
+            <div class="campo">
+                <label for="categoria"><strong>Categoria</strong></label>
+                <select id="categoria" required>
+                  <option selected disabled value="">Selecione</option>
+                  <option>categoria1</option>
+                  <option>categoria2</option>
+                  <option>categoria3</option>
+                </select>
+            </div>
+
+            <fieldset class="grupo">
+                <div id="check">
+                    <label><strong>Selecione o material utilizado:</strong></label><br><br>
+                    <input type="checkbox" id="Resina" name="Resina" value="">
+                    <label for="Resina"> Resina</label>
+                    <input type="checkbox" id="PVC" name="PVC" value="">
+                    <label for="PVC"> PVC</label>
+                    <input type="checkbox" id="PETG" name="PETG" value="">
+                    <label for="PETG"> PETG</label>
+                    <input type="checkbox" id="PLA" name="PLA" value="">
+                    <label for="PLA"> PLA</label>
+                    <input type="checkbox" id="ABS" name="ABS" value="">
+                    <label for="ABS"> ABS</label>
+                    <input type="checkbox" id="Nylon" name="Nylon" value="">
+                    <label for="Nylon"> Nylon</label>
+                    <input type="checkbox" id="Plastico" name="Plastico" value="">
+                    <label for="Plastico"> </label>
+                    <label for="Plastico"> Plastico</label>
+                </div>
+            </fieldset>
+            <div class="campo">
+                <br>
+                <label for="descrição"><strong>Descrição</strong></label>
+                <textarea rows="6" style="width: 26em" id="descrição" name="descrição"></textarea>
+            </div>
+            <button class="botao" type="submit" onsubmit="">Salvar</button>            
+
+        </form>
+
+    </body>
+
+</html>
