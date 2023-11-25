@@ -11,6 +11,10 @@ body {
     font-family: Lastica
 }
 
+img {
+    width: 100%;
+}
+
 figure#logo {
     width: 20px;
     height: 20px;
@@ -103,7 +107,7 @@ div#fornec img{
 }
 
 .search-box {
-    width: 300px;
+    width: 30rem;
     padding: 10px;
     border: 2px solid #fff; /* Cor da borda branca */
     border-radius: 5px;
@@ -139,8 +143,12 @@ div#fornec img{
     font-weight: 100;
 }
 
-.carrinho-header {
-    width: 35px;
+.carrinho-header, .divbusca img {
+    width: 40px;
+}
+
+.categorias, .fornecedores {
+    margin: 30px auto;
 }
 
 @media (max-width: 992px) {
