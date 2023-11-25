@@ -8,7 +8,8 @@ body {
     background-color: blueviolet;
     background-image: url("../imagens/BACKGROUND.png");
     align-items: center;
-    font-family: Lastica
+    font-family: Lastica;
+    color: white;
 }
 
 img {
