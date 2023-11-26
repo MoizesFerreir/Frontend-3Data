@@ -75,61 +75,69 @@
 
                     <div class="col-md-6 dataInputs">
                         <input type="text" name="nome" id="nome" placeholder="NOME DO PRODUTO" />
-
-                        <div class="campo">
-                            <label for="email"><strong>Valor R$:</strong></label>
-                            <input type="double" name="preço" id="preço" required>
-                        </div>
-                        <div class="campo">
-                            <label><strong>Produto personalizavel?</strong></label>
-                            <label>
-                                <input type="radio" name="sim" value="sim">Sim
-                            </label>
-                            <label>
-                                <input type="radio" name="não" value="Não">Não
-                            </label>
-                        </div>
-                        <div class="campo">
-                            <label for="categoria"><strong>Categoria</strong></label>
-                            <select id="categoria" required>
-                              <option selected disabled value="">Selecione</option>
-                              <option>categoria1</option>
-                              <option>categoria2</option>
-                              <option>categoria3</option>
-                            </select>
-                        </div>
-            
-                        <fieldset class="grupo">
-                            <div id="check">
-                                <label><strong>Selecione o material utilizado:</strong></label><br><br>
-                                <input type="checkbox" id="Resina" name="Resina" value="">
-                                <label for="Resina"> Resina</label>
-                                <input type="checkbox" id="PVC" name="PVC" value="">
-                                <label for="PVC"> PVC</label>
-                                <input type="checkbox" id="PETG" name="PETG" value="">
-                                <label for="PETG"> PETG</label>
-                                <input type="checkbox" id="PLA" name="PLA" value="">
-                                <label for="PLA"> PLA</label>
-                                <input type="checkbox" id="ABS" name="ABS" value="">
-                                <label for="ABS"> ABS</label>
-                                <input type="checkbox" id="Nylon" name="Nylon" value="">
-                                <label for="Nylon"> Nylon</label>
-                                <input type="checkbox" id="Plastico" name="Plastico" value="">
-                                <label for="Plastico"> </label>
-                                <label for="Plastico"> Plastico</label>
+                        
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4">             
+                                    <input type="number" name="altura" id="altura" placeholder="Altura" />
+                                </div>
+                                <div class="col-md-4">             
+                                    <input type="number" name="largura" id="largura" placeholder="Largura" />
+                                </div>
+                                <div class="col-md-4">             
+                                    <input type="number" name="comprimento" id="comprimento" placeholder="Comprimento" />
+                                </div>
                             </div>
-                        </fieldset>
-                        <div class="campo">
-                            <br>
-                            <label for="descrição"><strong>Descrição</strong></label>
-                            <textarea rows="6" style="width: 26em" id="descrição" name="descrição"></textarea>
                         </div>
+
+                        <input type="number" name="estoque" id="estoque" placeholder="Estoque inicial" />
+
+                        <select name="categoria" id="categoria">
+                            <option value="" disabled selected hidden>CATEGORIA</option>
+                            <option value="Decoração">Decoracao</option>
+                            <option value="Engenharia">Engenharia</option>
+                            <option value="Sustentável">Sustentavel</option>
+                            <option value="Personalizado">Personalizado</option>
+                        </select>
+
+                        <select name="material" id="material">
+                            <option value="" disabled selected hidden>MATERIAL UTILIZADO</option>
+                            <option value="Resina">Resina</option>
+                            <option value="PVC">PVC</option>
+                            <option value="PETG">PETG</option>
+                            <option value="PLA">PLA</option>
+                            <option value="ABS">ABS</option>
+                            <option value="Nylon">Nylon</option>
+                            <option value="Plastico">Plastico</option>
+                        </select>
+
+                        <div class="container produtoPersonalizado">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label><strong>Produto personalizavel?</strong></label>
+                                </div>
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="radio" name="personalizado" value="S" style="margin-right: 10px">
+                                        SIM 
+                                    </label>
+                                </div>
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="radio" name="personalizado" value="N"  style="margin-right: 10px">
+                                        NAO 
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <textarea rows="7" id="descrição" name="descrição" maxlength="150"></textarea>
+                        <button class="botao" type="submit" onsubmit="">Salvar</button>            
                     </div>
                 </div>
             </div>
 
             
-            <button class="botao" type="submit" onsubmit="">Salvar</button>            
 
         </form>
 
