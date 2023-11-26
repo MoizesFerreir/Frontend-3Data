@@ -2,7 +2,6 @@ const apiUrl = 'http://localhost:8080';
 let customerDocument;
 
 async function getCustomer(document) {
-  customerDocument = document;
   try {
     let response = await fetch(`${apiUrl}/customer?document=${document}`);
     
@@ -38,7 +37,7 @@ async function postCustomer (body) {
 async function putCustomer (body) {
   try {
     let response = await fetch(`${apiUrl}/customer?document=${customerDocument}`, {
-      method: "POST",
+      method: "PUT",
       headers: {
         'Content-Type': 'application/json'
       },
@@ -135,6 +134,7 @@ async function fillFieldsWithDocument (document) {
   if (!customerData)
     return window.alert("Nnehum cliente registrado com esse documento.")
 
+  customerDocument = customerData.id;
   document.getElementById('name').value = customerData.name;
   document.getElementById('document').value = customerData.document;
   document.getElementById('socialName').value = customerData.socialName;
