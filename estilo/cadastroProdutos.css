@@ -41,12 +41,12 @@
     text-align: center;
     background: transparent;
     border: 3px solid white;
-    padding: 10px 0;
+    padding: 10px;
     border-radius: 20px;
     color: white;
 }
 
-input::placeholder {
+input::placeholder, textarea::placeholder {
     color: white;
 }
 
