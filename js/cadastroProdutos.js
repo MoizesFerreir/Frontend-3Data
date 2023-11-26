@@ -113,7 +113,6 @@ function getProductPhotos () {
 
     // const fileBase64 = reader.readAsDataURL(arquivo);
 
-    // return console.log(fileBase64, typeof fileBase64);
     // return [reader.readAsDataURL(arquivo)]
   } else {
     return [];
@@ -195,8 +194,6 @@ async function storeProduct () {
 
 async function fillFieldsWithProductData(productId) {
   const productData = await getProduct(productId);
-
-  console.log(productData);
 
   if(!productData)
     return window.alert('Não foi possível encontrar dados do produto solicitado');
