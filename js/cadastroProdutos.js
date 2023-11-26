@@ -1,5 +1,6 @@
 const apiUrl = 'http://localhost:8080';
 let supplier;
+let productCode;
 
 async function getCategories() {
   try {
@@ -7,6 +8,20 @@ async function getCategories() {
     
     if (!response.ok) {
       throw new Error('Erro ao buscar os dados');
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+async function getProduct(productId) {
+  try {
+    let response = await fetch(`${apiUrl}/products/${productId}`);
+    
+    if (!response.ok) {
+      throw new Error('Erro ao buscar os dados do produto');
     }
 
     return await response.json();
@@ -35,6 +50,26 @@ async function postProduct (body) {
   }
 }
 
+async function putProduct (body) {
+  try {
+    let response = await fetch(`${apiUrl}/products/${productCode}`, {
+      method: "PUT",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+    
+    if (!response.ok) {
+      throw new Error('Erro ao salvar produto!');
+    }
+
+    return window.alert("Produto atualizado com sucesso!");
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 async function fillFields ()  {
   const categories = await getCategories();
 
@@ -52,11 +87,14 @@ async function fillFields ()  {
 
   const queryString = window.location.search;
   const params = new URLSearchParams(queryString);
-  const idSupplier = params.get('idSupplier');
+  supplier = params.get('idSupplier');
+  const productId = params.get('productId');
   
-  if (!idSupplier)
+  if (!supplier)
     return window.alert("Insira o Id do fornecedor. ?idSupplier={id}");
-  supplier = idSupplier;
+
+  if(productId)
+    fillFieldsWithProductData(productId)
 }
 
 function getProductPhotos () {
@@ -92,6 +130,7 @@ function cleanFields () {
   document.getElementById('descricao').value = "";
   document.getElementById('categoria').value = "";
   document.getElementById('cor').value = "";
+  productCode = null;
 }
 
 async function storeProduct () {
@@ -147,9 +186,29 @@ async function storeProduct () {
       categories: [category],
     }
 
-    await postProduct(body);
+    productCode ? await putProduct(body) : await postProduct(body);
     cleanFields();
   } catch (error) {
     throw new Error(error)
   }
+}
+
+async function fillFieldsWithProductData(productId) {
+  const productData = await getProduct(productId);
+
+  console.log(productData);
+
+  if(!productData)
+    return window.alert('Não foi possível encontrar dados do produto solicitado');
+
+  productCode = productData.id;
+  document.getElementById('nome').value = productData.name;
+  document.getElementById('price').value = productData.productValue;
+  document.getElementById('altura').value = productData.length;
+  document.getElementById('largura').value = productData.width;
+  document.getElementById('comprimento').value = productData.longitude;
+  document.getElementById('estoque').value = productData.stock;
+  document.getElementById('descricao').value = productData.description;
+  document.getElementById('categoria').value = productData.categories[0].id;
+  document.getElementById('cor').value = productData.color;
 }
