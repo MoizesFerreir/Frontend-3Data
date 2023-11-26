@@ -77,4 +77,5 @@ option {
     font-weight: bold;
     padding: 10px 0px;
     border-radius: 20px;
+    border: none;
 }
